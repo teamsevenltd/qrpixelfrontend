@@ -1,0 +1,44 @@
+@font-face {
+  font-family: Roboto;
+  src: url("../../../assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+.wrapper {
+  font-family: Roboto, sans-serif !important; //text
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0px 0px 6px -2px #f6765e;
+}
+table{
+  border-left: 0;
+  border-right: 0;
+}
+table{
+  th, td{
+    text-align: center;
+    border: 1px dashed #062264;
+  }
+}
+.btn-outline-secondary{
+  outline: 1px solid #062264;
+  color: black;
+  border-radius: 5rem;
+}
+.btn-outline-secondary:hover{
+  background-color: #062264;
+  color: white;
+  border-radius: 5rem;
+  outline: 1px solid white;
+}
+.countrybackground{
+  background-image: url("../../../assets/images/mapsfordashboard.png");
+  background-repeat: no-repeat;
+  background-size:auto;
+  height: 18rem;
+  width: auto;
+}
+.progress-bar{
+  background-color: #f6765e;
+}

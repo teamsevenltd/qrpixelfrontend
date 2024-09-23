@@ -1,0 +1,145 @@
+<section class="wrapper">
+    <div class="bg-primary">
+        <div class="container vh-100">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-xl-6 col-md-8 col-12">
+                    <div class="card border-0 rounded-4">
+                        <div class="card-body">
+                            <div class="d-grid justify-content-center">
+                                <img src="../../../assets/images/QRPLogoWeb.png" alt="" class="m-auto">
+                                <div class="mx-auto my-1 h3">Get Yourself Registered</div>
+                                <div class="box"></div>
+                                <div class="box1"></div>
+                                <!-- <p class="text-muted text-center">
+                                    Create your QR Pixel Account
+                                </p> -->
+                            </div>
+                            <form class="container" [formGroup]="registerForm" (ngSubmit)="submitregisterForm()">
+                                <div class="row d-md-flex mt-md-4">
+                                    <div class="col-md-6 col-12 p-0">
+                                        <label for="firstname" class="form-label namepadding">First Name</label>
+                                        <input type="text" name="firstname"
+                                            class="form-control border-0 border-bottom rounded-0"
+                                            formControlName="firstname" />
+                                        <div *ngIf="
+                        registerForm.get('firstname')?.hasError('required') &&
+                        (registerForm.get('firstname')?.touched ||
+                          registerForm.get('firstname')?.dirty)
+                      " class="error mt-1">
+                                            Required Field
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-12 mt-md-0 mt-3 p-0 ps-md-3">
+                                        <label for="lastname" class="form-label ps-3 ps-md-0">Last Name</label>
+                                        <input type="text" name="lastname"
+                                            class="form-control border-0 border-bottom rounded-0"
+                                            formControlName="lastname" />
+                                        <div *ngIf="
+                        registerForm.get('lastname')?.hasError('required') &&
+                        (registerForm.get('lastname')?.touched ||
+                          registerForm.get('lastname')?.dirty)
+                      " class="error mt-1">
+                                            Required Field
+                                        </div>
+                                    </div>
+                                    <label for="email" class="form-label mt-3">Email</label>
+                                    <input type="email" name="email"
+                                        class="form-control border-0 border-bottom rounded-0" formControlName="email" />
+                                    <div *ngIf="
+                      registerForm.get('email')?.hasError('required') &&
+                      (registerForm.get('email')?.touched ||
+                        registerForm.get('email')?.dirty)
+                    " class="error mt-1">
+                                        Required Field
+                                    </div>
+                                    <div *ngIf="registerForm.get('email')?.hasError('email')" class="error mt-1">
+                                        Invalid Format
+                                    </div>
+                                    <div class="position-relative p-0">
+                                        <label for="password" class="form-label mt-3 namepadding">Password</label>
+                                        <input [type]="hidepassword ? 'text' : 'password'" name="password"
+                                            class="form-control border-0 border-bottom rounded-0"
+                                            formControlName="password" />
+                                        <i class="ti ti-eye-off eyeicon" (click)="togglepassword()"
+                                            *ngIf="hidepassword"></i>
+                                        <i class="ti ti-eye eyeicon" (click)="togglepassword()"
+                                            *ngIf="!hidepassword"></i>
+                                    </div>
+                                    <div *ngIf="
+                      registerForm.get('password')?.hasError('required') &&
+                      (registerForm.get('password')?.touched ||
+                        registerForm.get('password')?.dirty)
+                    " class="error mt-1">
+                                        Required Field
+                                    </div>
+                                    <div *ngIf="
+                      registerForm.get('password')?.hasError('minlength') &&
+                      (registerForm.get('password')?.touched ||
+                        registerForm.get('password')?.dirty)
+                    " class="error mt-1">
+                                        Minimum 8 characters required
+                                    </div>
+                                    <div class="position-relative p-0">
+                                        <label for="confirmPassword" class="form-label mt-3 namepadding">Confirm
+                                            Password</label>
+                                        <input [type]="hideconfirmpassword ? 'text' : 'password'" name="confirmPassword"
+                                            class="form-control border-0 border-bottom rounded-0"
+                                            formControlName="confirmPassword" />
+                                        <i class="ti ti-eye-off eyeicon" (click)="toggleconfirmpassword()"
+                                            *ngIf="hideconfirmpassword"></i>
+                                        <i class="ti ti-eye eyeicon" (click)="toggleconfirmpassword()"
+                                            *ngIf="!hideconfirmpassword"></i>
+                                    </div>
+                                    <div *ngIf="
+                      registerForm
+                        .get('confirmPassword')
+                        ?.hasError('required') &&
+                      (registerForm.get('confirmPassword')?.touched ||
+                        registerForm.get('confirmPassword')?.dirty)
+                    " class="error mt-1">
+                                        Required Field
+                                    </div>
+                                    <div *ngIf="
+                      registerForm
+                        .get('confirmPassword')
+                        ?.hasError('minlength') &&
+                      (registerForm.get('confirmPassword')?.touched ||
+                        registerForm.get('confirmPassword')?.dirty)
+                    " class="error mt-1">
+                                        Minimum 8 characters required
+                                    </div>
+                                    <div *ngIf="
+                      registerForm.hasError('passwordMismatch') &&
+                      !registerForm
+                        .get('confirmPassword')
+                        ?.hasError('minlength') &&
+                      (registerForm.get('confirmPassword')?.dirty)
+                    " class="error mt-1">
+                                        Passwords do not match
+                                    </div>
+                                    <!-- <div *ngIf="registerForm.get('confirmPassword')?.hasError('passwordMismatch')" class="error">
+                                        Passwords do not match.
+                                    </div> -->
+
+                                    <div class="row">
+                                        <div class="col-12 text-center my-4">
+                                            <button type="submit" class="btn btn-secondary px-md-4"
+                                                [disabled]="submitted || registerForm.invalid">
+                                                Register
+                                            </button>
+                                        </div>
+                                        <div class="col-12 text-center">
+                                            Have an account already?
+                                            <span><a routerLink="/" class="text-primary ms-3">Login</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

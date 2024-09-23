@@ -1,0 +1,216 @@
+<section class="wrapper">
+    <div class="container pe-0">
+        <div class="card margintop rounded-4 border-0 p-3">
+            <div class="card-body">
+                <div class="h5 text-center mb-2 mb-md-4">Lifetime Analytics</div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mt-3 mt-lg-0">
+                        <div class="card card-height bg-light border-0 rounded-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-grid">
+                                        <small><i style="color: green;"
+                                                class="ti ti-point-filled me-1"></i>Views</small>
+                                        <strong class="mt-2 text-end">N/A</strong>
+                                    </div>
+                                    <div>
+                                        <i class="ti ti-eye"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-3 mt-lg-0">
+                        <div class="card card-height bg-light border-0 rounded-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-grid">
+                                        <small><i style="color: blue;"
+                                                class="ti ti-point-filled me-1"></i>Clicks</small>
+                                        <strong class="mt-2 text-end">N/A</strong>
+                                    </div>
+                                    <div>
+                                        <i class="ti ti-click"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-3 mt-lg-0">
+                        <div class="card card-height bg-light border-0 rounded-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-grid">
+                                        <small><i style="color: #0dcaf0;"
+                                                class="ti ti-point-filled me-1"></i>Revenue</small>
+                                        <strong class="mt-2 text-end">N/A</strong>
+                                    </div>
+                                    <div>
+                                        <i class="ti ti-currency-dollar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mt-3 mt-lg-0">
+                        <div class="card card-height bg-light border-0 rounded-4">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-grid">
+                                        <small><i style="color: yellow;"
+                                                class="ti ti-point-filled me-1"></i>Subscribers</small>
+                                        <strong class="mt-2 text-end">0</strong>
+                                    </div>
+                                    <div>
+                                        <i class="ti ti-users-group"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8 mx-auto p-0">
+                <div class="card rounded-4 border-0 mt-3">
+                    <div class="card-body">
+                        <form [formGroup]="datepickerForm" (ngSubmit)="onSubmit()">
+                            <div class="row align-items-end">
+                                <div class="col-md-5">
+                                    <label for="startdate" class="form-label">Start Date:</label>
+                                    <input type="date" id="startdate" class="form-control cursor-pointer"
+                                        formControlName="startdate" onclick="this.showPicker()"
+                                        (change)="datechange()" />
+                                </div>
+                                <div class="col-md-5 mt-3 mt-md-0">
+                                    <label for="enddate" class="form-label">End Date:</label>
+                                    <input type="date" [attr.min]="startdate" id="enddate"
+                                        class="form-control cursor-pointer" formControlName="enddate"
+                                        onclick="this.showPicker()" />
+                                </div>
+                                <div class="col-md-2 mt-3 mt-xl-0 d-flex d-md-none d-xl-flex">
+                                    <button type="submit" class="btn btn-outline-primary rounded-pill px-4"><small><i
+                                                class="ti ti-search me-2"></i>Search</small></button>
+                                </div>
+                                <div class="col-md-2 p-md-0 p-lg-2 d-none d-md-block d-xl-none text-center">
+                                    <button type="submit" class="btn btn-sm btn-outline-primary rounded-pill"><small><i
+                                                class="ti ti-search me-2"></i>Search</small></button>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 mx-auto p-0">
+                <div class="card advertise rounded-4 my-3" *ngIf="!hidecard">
+                    <div class="card-body">
+                        <button type="button" class="btn-close float-end" aria-label="Close"
+                            (click)="togglecard()"></button>
+                        <div class="row">
+                            <div class="col-12 col-md-8 lh-lg">
+                                <div class="h5">Discover new features </div>
+                                <div class="d-grid">
+                                    <small class="lh-sm">Unlock the insights of QR Pixel by trying Pro version</small>
+                                    <small>It's a 30 day free trial! Cancel Anytime.</small>
+                                </div>
+                                <div class="mt-3 d-grid">
+                                    <small>&#10003; <span class="ms-2">Get analysis of specific period</span></small>
+                                    <small>&#10003; <span class="ms-2">See your top performing links</span></small>
+                                    <small>&#10003; <span class="ms-2">Track your revenue and sales</span></small>
+                                    <small>&#10003; <span class="ms-2">Get the full picture with a year's worth of
+                                            data</span></small>
+                                </div>
+                                <div class="w-100 text-center mt-md-4 d-none d-lg-flex justify-content-center">
+                                    <button type="button" class="btn btn-secondary w-50 centerall"><i
+                                            class="ti ti-bolt me-1"></i>Try for
+                                        Free</button>
+                                </div>
+                                <div class="w-100 text-center">
+                                    <small>Upgrade for $15/month afterwards</small>
+                                </div>
+                                <div class="w-100 text-center mt-2 d-block d-lg-none">
+                                    <button type="button" class="btn btn-secondary w-100"><i
+                                            class="ti ti-bolt me-1"></i>Try for
+                                        Free</button>
+                                    <small>Upgrade for $15/month afterwards</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-none d-md-flex align-items-center">
+                                <img src="../../../assets/images/stats.png" alt="" class="stats">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center p-2">
+                    <strong>Activity <a href=""><i class="ti ti-question-mark"></i></a></strong>
+                    <button type="button" class="btn btn-outline-secondary rounded-pill d-flex align-items-center me-2 me-md-0">
+                        <small><i class="ti ti-bolt fs-6 me-2"></i>Upgrade</small>
+                    </button>
+                </div>
+                <div class="card border-0 rounded-4">
+                    <div class="card-body">
+                        <div class="p-3 d-flex justify-content-center gap-5">
+                            <small class="d-flex align-items-center"><span style="color: green;"
+                                    class="me-1 fs-2">&#x2022;</span>Views</small>
+                            <small class="d-flex align-items-center"><span style="color: blue;"
+                                    class="me-1 fs-2">&#x2022;</span>Clicks</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-3">
+                    <div class="d-flex justify-content-between align-items-center p-2">
+                        <strong>Top Performing <a href=""><i class="ti ti-question-mark"></i></a></strong>
+                        <button type="button" class="btn btn-outline-secondary rounded-pill d-flex align-items-center me-2 me-md-0">
+                            <small><i class="ti ti-bolt fs-6 me-2"></i>Upgrade</small>
+                        </button>
+                    </div>
+                    <div class="card border-0 rounded-4">
+                        <div class="card-body">
+                            <small class="float-end text-muted me-2">Clicks</small>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="d-flex justify-content-between align-items-center p-2">
+                    <strong>Subscribers <a href=""><i class="ti ti-question-mark"></i></a></strong>
+                    <button type="button" class="btn btn-outline-secondary rounded-pill d-flex align-items-center me-2 me-md-0">
+                        <small><i class="ti ti-bolt fs-6 me-2"></i>Upgrade</small>
+                    </button>
+                </div>
+                <div class="card border-0 rounded-4 mb-3">
+                    <div class="card-body">
+                        <div class="p-3 d-flex justify-content-center gap-3 gap-lg-5">
+                            <small class="d-flex align-items-center text-center"><span style="color: yellow;"
+                                    class="me-1 fs-2">&#x2022;</span>Subscribers</small>
+                            <small class="d-flex align-items-center text-center"><span style="color: lightblue;"
+                                    class="me-1 fs-2">&#x2022;</span>Notifications Clicked</small>
+                            <small class="d-flex align-items-center text-center"><span style="color: lightgreen;"
+                                    class="me-1 fs-2">&#x2022;</span>Notifications Sent</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="mt-5">
+                    <div class="d-flex justify-content-between align-items-center p-2">
+                        <strong>Activity</strong>
+                        <button type="button" class="btn btn-outline-secondary rounded-pill d-flex align-items-center">
+                            <small><i class="ti ti-bolt fs-6 me-2"></i>Upgrade</small>
+                        </button>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+</section>

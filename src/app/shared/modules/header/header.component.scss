@@ -1,0 +1,112 @@
+@font-face {
+  font-family: Poppins;
+  src: url("../../../../assets/fonts/Poppins/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../../../assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+.wrapper {
+  position: fixed;
+  min-width: 100%;
+  z-index: 999;
+}
+.dropdown-menu {
+  font-family: Roboto, sans-serif !important;
+}
+.btn-header {
+  font-family: Poppins, sans-serif !important;
+  font-size: 0.9rem;
+  background-color: transparent;
+  color: #062264;
+  border: 1px solid transparent;
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+}
+.btn-header:hover {
+  font-family: Poppins, sans-serif !important;
+  font-size: 0.9rem;
+  background-color: #f6765e;
+  color: white;
+  border: 1px solid #f6765e;
+  border-radius: 5rem;
+  transition-duration: 0.2s;
+}
+.logo {
+  width: 2.5rem;
+  height: auto;
+}
+
+.navbar-brand {
+  margin-right: 0;
+}
+.navbar-toggler {
+  margin-right: 0.5rem;
+  // border: 2px solid #062264 !important;
+}
+.navbar-toggler:focus {
+  margin-right: 0.5rem;
+  box-shadow: 0px 0px 0px 4px #062264 !important;
+}
+.navlink {
+  font-size: 0.9rem;
+}
+.flexend {
+  width: 60%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.text-primary{
+  color: #f6765e !important;
+}
+// .fw-bold {
+//   color: #f6765e;
+// }
+.size {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+img {
+  width: 50px;
+  height: 50px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .flexend {
+    width: 82%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .logo {
+    width: 3rem;
+    height: auto;
+  }
+  .dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: -16rem;
+    margin-top: var(--bs-dropdown-spacer);
+  }
+}
+
+// // X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .logo {
+    width: 3.5rem;
+    height: auto;
+  }
+}
+
+// // XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) { ... }

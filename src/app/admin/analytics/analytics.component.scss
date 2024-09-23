@@ -1,0 +1,69 @@
+@font-face {
+  font-family: Roboto;
+  src: url("../../../assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+.wrapper {
+  padding-top: 5rem !important;
+  font-family: Roboto;
+}
+.card-height {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.advertise {
+  // margin-top: 2rem;
+  background-color: #cbdbff;
+  border: 0;
+}
+.btn-close {
+  font-size: small;
+}
+
+a {
+  color: #f6765e;
+}
+a:hover {
+  color: #062264;
+}
+.stats {
+  width: auto;
+  height: 18rem;
+}
+
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .wrapper {
+    padding-top: 4rem !important;
+  }
+  .margintop {
+    margin-top: 3rem;
+  }
+  .stats {
+    width: auto;
+    height: 10rem;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .stats {
+    width: auto;
+    height: 14rem;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ... }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  .stats {
+    width: auto;
+    height: 18rem;
+  }
+}
